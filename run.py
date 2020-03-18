@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 app = Flask(__name__)
 
 
@@ -9,7 +9,7 @@ def hello_world():
 
 @app.route('/ip')
 def myip():
-    return 'My IP is: '
+    return Response(body='My IP is:', status=200)
 
 
 if __name__ == '__main__':
